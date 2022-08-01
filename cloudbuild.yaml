@@ -15,11 +15,8 @@ steps:
     args: 
     - -c
     - |
-       echo "Then we saved " $(cat /workspace/diff.txt)
        while read line
        do 
-       echo $line; 
-       echo "Building $line ... "
        config="${line}/cloudbuild.yaml"
        echo $config
        if [[ ! -f "${config}" ]]; then
